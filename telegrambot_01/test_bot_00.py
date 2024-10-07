@@ -1,8 +1,13 @@
+import os
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-# Replace 'YOUR_NEW_BOT_TOKEN' with your actual bot token
-TOKEN = '7602146484:AAFfBSxHpqljMohWJ9b9O826iN_0PBjrDm0'
+# Load environment variables from the .env file
+load_dotenv()
+
+# Get the bot token from the environment variable
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 # Replace with your channel username or ID
 CHANNEL_ID = '@testChannel_zi'  # or '-1001234567890' if using channel ID

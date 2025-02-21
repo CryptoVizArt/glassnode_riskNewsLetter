@@ -9,7 +9,7 @@ today = datetime.combine(date.today(), time())
 
 def stock_ticker(ticker):
     # Download historical financial data for AAPL
-    response = yf.download(ticker, start="2010-01-01", end=today)
+    response = yf.download(ticker, start="2020-01-01", end=today)
     response['date'] = pd.to_datetime(response.index,utc=True)
     response = response.set_index('date',drop=False)
     response.index.name = ''
